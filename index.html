@@ -3,182 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <title>DIVYARA - Where DeVine meets their beauty</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sanskrit+2003&family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sanskrit+2003&display=swap" rel="stylesheet" />
   <style>
+    /* Reset */
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #fffdf9;
-      color: #2c2c2c;
+      background-color: #fffdf9;
+      color: #333;
     }
-    header {
+
+    /* Hero Section with animated clothes hanging background */
+    .hero {
+      height: 100vh;
+      background-color: #2c2c2c;
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
-      padding: 3rem 2rem;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
-      background: #f7f0ec;
-    }
-    header .brand {
+      color: #f9f5f0;
+      text-align: center;
       font-family: 'Sanskrit 2003', serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: #c1121f;
-      letter-spacing: 0.15em;
+      overflow: hidden;
+      padding: 0 1rem;
     }
-    header .slogan {
-      font-family: 'Pacifico', cursive;
-      font-size: 1.8rem;
-      color: #8a0e14;
-      margin-top: 0.5rem;
-    }
-    nav {
+
+    /* Clothes hanging animation container */
+    .clothes-line {
+      position: absolute;
+      top: 40%;
+      left: 0;
+      width: 100%;
+      height: 150px;
       display: flex;
-      gap: 1.5rem;
+      justify-content: space-around;
+      align-items: flex-start;
+      pointer-events: none;
+      z-index: 0;
+      gap: 20px;
     }
-    nav a {
-      color: #c1121f;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      background-color: #ffe3e0;
-      transition: background-color 0.3s;
+
+    .cloth-wrapper {
+      animation: sway 5s ease-in-out infinite;
+      transform-origin: top center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    nav a:hover {
+
+    /* Different delay for each cloth to sway differently */
+    .cloth-wrapper:nth-child(odd) {
+      animation-delay: 0s;
+    }
+    .cloth-wrapper:nth-child(even) {
+      animation-delay: 2.5s;
+    }
+
+    /* Adding slight vertical floating */
+    .cloth-wrapper {
+      animation-name: sway, floaty;
+      animation-duration: 5s, 7s;
+      animation-timing-function: ease-in-out, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+    }
+
+    @keyframes sway {
+      0%, 100% { transform: rotate(3deg); }
+      50% { transform: rotate(-3deg); }
+    }
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .cloth {
+      width: 80px;
+      height: 120px;
+      background: linear-gradient(135deg, #c1121f 0%, #8a0e14 100%);
+      border-radius: 10px 10px 5px 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    /* Hanger wire */
+    .cloth::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 10px;
+      border-radius: 20px 20px 0 0;
+      background: #444;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.1em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      font-style: italic;
+      font-size: 1.7rem;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero a.btn {
       background-color: #c1121f;
       color: white;
+      padding: 1rem 3rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease;
+      position: relative;
+      z-index: 1;
     }
 
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      padding: 3rem 2rem;
-      gap: 3rem;
-      background: #c1121f;
-      color: white;
+    .hero a.btn:hover {
+      background-color: #8a0e14;
     }
-    .hero .info {
-      max-width: 400px;
-      font-size: 1.5rem;
-      font-style: italic;
+
+    /* Collections Section */
+    #collections {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    #collections h2 {
       font-family: 'Sanskrit 2003', serif;
-      line-height: 1.6;
-    }
-    .hero img {
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #2c2c2c;
     }
 
-    .blocks {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: 0 auto;
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
     }
-    .block {
-      flex: 1 1 280px;
-      background: white;
+
+    .collection-item {
+      background: #fefefe;
       border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       overflow: hidden;
-      cursor: pointer;
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
-    .block:hover {
-      transform: translateY(-10px);
+
+    .collection-item:hover {
+      transform: scale(1.05);
     }
-    .block img {
+
+    .collection-item img {
       width: 100%;
-      height: 200px;
+      height: 250px;
       object-fit: cover;
     }
-    .block h3 {
+
+    .collection-item h3 {
       font-family: 'Sanskrit 2003', serif;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       padding: 1rem;
       color: #c1121f;
-      text-align: center;
-    }
-    .block p {
-      padding: 0 1rem 1rem;
-      color: #555;
-      font-size: 1rem;
-      text-align: center;
     }
 
+    /* Contact Section */
+    #contact {
+      background-color: #fefefe;
+      padding: 3rem 1rem;
+      max-width: 600px;
+      margin: 3rem auto 5rem;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    #contact h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #2c2c2c;
+      font-family: 'Sanskrit 2003', serif;
+    }
+
+    #contact p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    #contact a {
+      color: #c1121f;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* Footer */
     footer {
-      background: #2c2c2c;
+      background-color: #2c2c2c;
       color: white;
       text-align: center;
       padding: 1.5rem 1rem;
       font-size: 0.9rem;
       font-family: 'Segoe UI', sans-serif;
-      margin-top: 3rem;
     }
 
+    /* Responsive */
     @media(max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
+      .hero h1 {
+        font-size: 2.8rem;
       }
-      .hero {
-        flex-direction: column;
-        text-align: center;
+
+      .hero p {
+        font-size: 1.2rem;
       }
-      .hero .info, .hero img {
-        max-width: 100%;
+
+      #collections h2 {
+        font-size: 2rem;
+      }
+
+      .collection-item img {
+        height: 180px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="brand">DIVYARA</div>
-    <nav>
-      <a href="#collections">Collections</a>
-      <a href="#contact">Contact</a>
-      <a href="https://instagram.com/_thedivyara" target="_blank" rel="noopener noreferrer">Instagram</a>
-    </nav>
-  </header>
-
   <section class="hero">
-    <div class="info">
-      <p><strong>Where DeVine meets their beauty.</strong><br />Discover our collection of traditional, occasional, and casual wear designed to express your grace and style.</p>
+    <div class="clothes-line">
+      <div class="cloth-wrapper"><div class="cloth"></div></div>
+      <div class="cloth-wrapper"><div class="cloth"></div></div>
+      <div class="cloth-wrapper"><div class="cloth"></div></div>
+      <div class="cloth-wrapper"><div class="cloth"></div></div>
+      <div class="cloth-wrapper"><div class="cloth"></div></div>
     </div>
-    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80" alt="Model wearing ethnic clothing" />
+    <h1>DIVYARA</h1>
+    <p>Where DeVine meets their beauty</p>
+    <a href="#collections" class="btn">Explore Collections</a>
   </section>
 
-  <section id="collections" class="blocks">
-    <div class="block">
-      <img src="https://images.unsplash.com/photo-1562157879-818bc0726a3f?auto=format&fit=crop&w=600&q=80" alt="Traditional Wear" />
-      <h3>Traditional Elegance</h3>
-      <p>Rich fabrics and classic designs that celebrate heritage.</p>
-    </div>
-    <div class="block">
-      <img src="https://images.unsplash.com/photo-1613991201320-937e2b7e511f?auto=format&fit=crop&w=600&q=80" alt="Casual Wear" />
-      <h3>Casual Comfort</h3>
-      <p>Effortless styles for everyday grace and comfort.</p>
-    </div>
-    <div class="block">
-      <img src="https://images.unsplash.com/photo-1602810318763-0492cbe22b4b?auto=format&fit=crop&w=600&q=80" alt="Occasional Wear" />
-      <h3>Occasional Glam</h3>
-      <p>Make every moment special with stunning occasional wear.</p>
+  <section id="collections">
+    <h2>Our Collections</h2>
+    <div class="collection-grid">
+      <div class="collection-item">
+        <img src="https://images.unsplash.com/photo-1562157879-818bc0726a3f?auto=format&fit=crop&w=600&q=80" alt="Traditional Wear" />
+        <h3>Traditional Elegance</h3>
+      </div>
+      <div class="collection-item">
+        <img src="https://images.unsplash.com/photo-1613991201320-937e2b7e511f?auto=format&fit=crop&w=600&q=80" alt="Casual Wear" />
+        <h3>Casual Comfort</h3>
+      </div>
+      <div class="collection-item">
+        <img src="https://images.unsplash.com/photo-1602810318763-0492cbe22b4b?auto=format&fit=crop&w=600&q=80" alt="Occasional Wear" />
+        <h3>Occasional Glam</h3>
+      </div>
     </div>
   </section>
 
-  <section id="contact" style="max-width:600px; margin:3rem auto 5rem; text-align:center;">
-    <h2 style="font-family:'Sanskrit 2003', serif; font-size:2rem; margin-bottom:1rem; color:#2c2c2c;">Contact Us</h2>
-    <p><strong>Phone:</strong> <a href="tel:+919327045197" style="color:#c1121f; text-decoration:none;">9327045197</a></p>
-    <p><strong>Email:</strong> <a href="mailto:divyara.vastra@gmail.com" style="color:#c1121f; text-decoration:none;">divyara.vastra@gmail.com</a></p>
-    <p><strong>Instagram:</strong> <a href="https://instagram.com/_thedivyara" target="_blank" rel="noopener noreferrer" style
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Phone:</strong> <a href="tel:+919327045197">9327045197</a></p>
+    <p><strong>Email:</strong> <a href="mailto:divyara.vastra@gmail.com">divyara.vastra@gmail.com</a></p>
+    <p><strong>Instagram:</strong> <a href="https://instagram.com/_thedivyara" target="_blank" rel="noopener noreferrer">@_thedivyara</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 DIVYARA. All rights reserved.
+  </footer>
+
+</body>
+</html>
