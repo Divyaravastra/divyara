@@ -7,9 +7,19 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- AOS Animation CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="DIVYARA - Traditional and modern Indian fashion designed for your unique elegance." />
+  <meta property="og:title" content="DIVYARA" />
+  <meta property="og:description" content="Where DeVine Meets Their Beauty" />
+  <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <style>
     * {
@@ -76,13 +86,18 @@
 
     .section {
       padding: 80px 20px;
-      margin-top: 60px;
       position: relative;
       z-index: 1;
-      background-color: transparent;
     }
 
-    /* Header with logo */
+    .section::before {
+      content: '';
+      display: block;
+      height: 80px;
+      margin-top: -80px;
+      visibility: hidden;
+    }
+
     .header {
       text-align: center;
       padding: 100px 20px 40px;
@@ -124,13 +139,21 @@
       font-size: 18px;
       position: relative;
       box-shadow: 0 4px 12px rgba(0,0,0,0.8);
-      transition: transform 0.2s;
+      transition: transform 0.2s, background-color 0.2s;
       color: #e0dce5;
     }
 
     .card:hover {
       transform: scale(1.05);
       background-color: rgba(26, 26, 26, 0.9);
+    }
+
+    .card a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      height: 100%;
+      width: 100%;
     }
 
     .plus {
@@ -143,7 +166,6 @@
     }
 
     footer {
-      margin-top: 60px;
       padding: 30px 20px;
       font-size: 14px;
       color: #e0dce5;
@@ -183,10 +205,12 @@
 </head>
 <body>
 
-  <div class="flower-bg flower-top-left"></div>
-  <div class="flower-bg flower-bottom-right"></div>
+  <!-- Decorative Background -->
+  <div class="flower-bg flower-top-left" aria-hidden="true"></div>
+  <div class="flower-bg flower-bottom-right" aria-hidden="true"></div>
 
-  <nav>
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Main navigation">
     <a href="#home">Home</a>
     <a href="#festive">Festive Wear</a>
     <a href="#casual">Casual</a>
@@ -195,53 +219,67 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- Hero Header -->
   <div class="header" id="home" data-aos="fade-down">
-    <img src="/logo.png" alt="DIVYARA Logo" class="logo" />
+    <img src="images/logo.png" alt="DIVYARA Logo" class="logo" />
     <p>Where DeVine Meets Their Beauty</p>
   </div>
 
+  <!-- Festive Wear Section -->
   <div class="section" id="festive" data-aos="fade-up">
-    <h2 style="text-align:center; color: #e0dce5;">Festive Wear</h2>
+    <h2 style="text-align:center;">Festive Wear</h2>
     <div class="grid">
       <div class="card" data-aos="zoom-in"><div class="plus">+</div>Elegant Sarees</div>
       <div class="card" data-aos="zoom-in"><div class="plus">+</div>Lehengas</div>
     </div>
   </div>
 
+  <!-- Casual Section -->
   <div class="section" id="casual" data-aos="fade-up">
-    <h2 style="text-align:center; color: #e0dce5;">Casual Elegance</h2>
+    <h2 style="text-align:center;">Casual Elegance</h2>
     <div class="grid">
       <div class="card" data-aos="zoom-in"><div class="plus">+</div>Kurtis</div>
       <div class="card" data-aos="zoom-in"><div class="plus">+</div>Indo-Western</div>
     </div>
   </div>
 
+  <!-- Shop Now Section -->
   <div class="section" id="shop" data-aos="fade-up">
-    <h2 style="text-align:center; color: #e0dce5;">Shop Now</h2>
+    <h2 style="text-align:center;">Shop Now</h2>
     <div class="grid">
-      <div class="card" data-aos="zoom-in"><div class="plus">+</div>View All Products</div>
+      <div class="card" data-aos="zoom-in">
+        <a href="/products.html">
+          <div class="plus">+</div>
+          View All Products
+        </a>
+      </div>
     </div>
   </div>
 
+  <!-- Our Story Section -->
   <div class="section" id="story" data-aos="fade-up">
-    <h2 style="text-align:center; color: #e0dce5;">Our Story</h2>
-    <p style="max-width: 700px; margin: auto; color:#e0dce5; text-align:center;">
+    <h2 style="text-align:center;">Our Story</h2>
+    <p style="max-width: 700px; margin: auto; text-align:center;">
       DIVYARA is not just fashion—it’s a movement celebrating tradition, beauty, and individuality through carefully crafted attire.
     </p>
   </div>
 
+  <!-- Contact Section -->
   <div class="section" id="contact" data-aos="fade-up">
-    <h2 style="text-align:center; color: #e0dce5;">Contact Us</h2>
-    <footer>
-      <div class="contact-info">
-        <span>&copy; 2025 DIVYARA</span>
-        <span>Instagram: <a href="https://instagram.com/_thedivyara" target="_blank">@_thedivyara</a></span>
-        <span>Phone: <a href="tel:9327045197">9327045197</a></span>
-        <span>Email: <a href="mailto:divyara.vastra@gmail.com">divyara.vastra@gmail.com</a></span>
-      </div>
-    </footer>
+    <h2 style="text-align:center;">Contact Us</h2>
   </div>
 
+  <!-- Footer -->
+  <footer>
+    <div class="contact-info">
+      <div>&copy; 2025 DIVYARA</div>
+      <div>Instagram: <a href="https://instagram.com/_thedivyara" target="_blank">@_thedivyara</a></div>
+      <div>Phone: <a href="tel:9327045197">9327045197</a></div>
+      <div>Email: <a href="mailto:divyara.vastra@gmail.com">divyara.vastra@gmail.com</a></div>
+    </div>
+  </footer>
+
+  <!-- AOS Script -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
