@@ -1,292 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DIVYARA - Where DeVine Meets Their Beauty</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DIVYARA - Where DeVine Meets Their Beauty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    body {
+      margin: 0;
+      font-family: 'Gloock', serif;
+      background:
+        radial-gradient(circle at 20% 30%, #4d4d4d 15%, transparent 40%),
+        radial-gradient(circle at 80% 20%, #666666 20%, transparent 50%),
+        radial-gradient(circle at 60% 80%, #3a3a3a 25%, transparent 55%),
+        linear-gradient(135deg, #1a1a1a, #2c2c2c);
+      color: #ddd;
+      overflow-x: hidden;
+    }
 
-  <!-- AOS Animation CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #111;
+      color: #eee;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 12px 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="DIVYARA - Traditional and modern Indian fashion designed for your unique elegance." />
-  <meta property="og:title" content="DIVYARA" />
-  <meta property="og:description" content="Where DeVine Meets Their Beauty" />
-  <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta name="twitter:card" content="summary_large_image" />
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
 
-  <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    nav a:hover {
+      color: #fff;
+    }
 
-    body {
-      margin: 0;
-      font-family: 'Gloock', serif;
-      background: linear-gradient(135deg, #b19cd9 0%, #1a1a1a 100%);
-      color: #e0dce5;
-      overflow-x: hidden;
-    }
+    .section {
+      padding: 80px 20px;
+      margin-top: 60px;
+    }
 
-    .flower-bg {
-      position: fixed;
-      width: 200px;
-      height: 200px;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1a/Flower_icon.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.07;
-      z-index: 0;
-      pointer-events: none;
-      filter: invert(1) brightness(1.5);
-    }
+    /* Flower background overlays */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      background-repeat: no-repeat;
+      background-size: 150px;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-    .flower-top-left {
-      top: 10px;
-      left: 10px;
-    }
+    body::before {
+      top: 20px;
+      left: 20px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flower_icon.svg/1024px-Flower_icon.svg.png');
+    }
 
-    .flower-bottom-right {
-      bottom: 10px;
-      right: 10px;
-      transform: rotate(180deg);
-    }
+    body::after {
+      bottom: 20px;
+      right: 20px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flower_icon.svg/1024px-Flower_icon.svg.png');
+      transform: rotate(180deg);
+    }
 
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: rgba(26, 26, 26, 0.85);
-      color: #e0dce5;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 12px 20px;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.7);
-    }
+    .header {
+      text-align: center;
+      padding: 100px 20px 40px;
+    }
 
-    nav a {
-      color: #e0dce5;
-      text-decoration: none;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
+    .header h1 {
+      font-size: 64px;
+      margin: 0 0 15px;
+      color: #eee;
+      letter-spacing: 0.05em;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+    }
 
-    nav a:hover {
-      color: #b19cd9;
-    }
+    .header p {
+      font-size: 24px;
+      color: #bbb;
+      letter-spacing: 0.08em;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
 
-    .section {
-      padding: 80px 20px;
-      position: relative;
-      z-index: 1;
-    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-    .section::before {
-      content: '';
-      display: block;
-      height: 80px;
-      margin-top: -80px;
-      visibility: hidden;
-    }
+    .card {
+      background-color: #2c2c2c;
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 18px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      transition: transform 0.2s;
+      color: #ddd;
+    }
 
-    .header {
-      text-align: center;
-      padding: 100px 20px 40px;
-      position: relative;
-      color: #e0dce5;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-    }
+    .card:hover {
+      transform: scale(1.05);
+    }
 
-    .header img.logo {
-      max-width: 220px;
-      width: 100%;
-      height: auto;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
-    }
+    .plus {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #bbb;
+    }
 
-    .header p {
-      font-size: 24px;
-      letter-spacing: 0.08em;
-      margin: 0;
-    }
+    footer {
+      margin-top: 60px;
+      padding: 30px 20px;
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+      line-height: 1.6;
+    }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+    .contact-info a {
+      color: #bbb;
+      text-decoration: none;
+    }
 
-    .card {
-      background-color: rgba(26, 26, 26, 0.7);
-      border-radius: 20px;
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 18px;
-      position: relative;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.8);
-      transition: transform 0.2s, background-color 0.2s;
-      color: #e0dce5;
-    }
+    .contact-info a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
 
-    .card:hover {
-      transform: scale(1.05);
-      background-color: rgba(26, 26, 26, 0.9);
-    }
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 42px;
+      }
 
-    .card a {
-      color: inherit;
-      text-decoration: none;
-      display: block;
-      height: 100%;
-      width: 100%;
-    }
+      .header p {
+        font-size: 18px;
+      }
 
-    .plus {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 22px;
-      font-weight: bold;
-      color: #b19cd9;
-    }
-
-    footer {
-      padding: 30px 20px;
-      font-size: 14px;
-      color: #e0dce5;
-      text-align: center;
-      background-color: transparent;
-      line-height: 1.6;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    }
-
-    .contact-info a {
-      color: #b19cd9;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .contact-info a:hover {
-      color: #e0dce5;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      .header img.logo {
-        max-width: 160px;
-      }
-
-      .header p {
-        font-size: 18px;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-      }
-    }
-  </style>
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Decorative Background -->
-  <div class="flower-bg flower-top-left" aria-hidden="true"></div>
-  <div class="flower-bg flower-bottom-right" aria-hidden="true"></div>
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#festive">Festive Wear</a>
+    <a href="#casual">Casual</a>
+    <a href="#shop">Shop</a>
+    <a href="#story">Our Story</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <!-- Navigation -->
-  <nav role="navigation" aria-label="Main navigation">
-    <a href="#home">Home</a>
-    <a href="#festive">Festive Wear</a>
-    <a href="#casual">Casual</a>
-    <a href="#shop">Shop</a>
-    <a href="#story">Our Story</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- Header Section -->
+  <div class="header section" id="home">
+    <h1>DIVYARA</h1>
+    <p>Where DeVine Meets Their Beauty</p>
+  </div>
 
-  <!-- Hero Header -->
-  <div class="header" id="home" data-aos="fade-down">
-    <img src="images/logo.png" alt="DIVYARA Logo" class="logo" />
-    <p>Where DeVine Meets Their Beauty</p>
-  </div>
+  <!-- Product Grid -->
+  <div class="section" id="festive">
+    <h2 style="text-align:center; color:#eee;">Festive Wear</h2>
+    <div class="grid">
+      <div class="card"><div class="plus">+</div>Elegant Sarees</div>
+      <div class="card"><div class="plus">+</div>Lehengas</div>
+    </div>
+  </div>
 
-  <!-- Festive Wear Section -->
-  <div class="section" id="festive" data-aos="fade-up">
-    <h2 style="text-align:center;">Festive Wear</h2>
-    <div class="grid">
-      <div class="card" data-aos="zoom-in"><div class="plus">+</div>Elegant Sarees</div>
-      <div class="card" data-aos="zoom-in"><div class="plus">+</div>Lehengas</div>
-    </div>
-  </div>
+  <div class="section" id="casual">
+    <h2 style="text-align:center; color:#eee;">Casual Elegance</h2>
+    <div class="grid">
+      <div class="card"><div class="plus">+</div>Kurtis</div>
+      <div class="card"><div class="plus">+</div>Indo-Western</div>
+    </div>
+  </div>
 
-  <!-- Casual Section -->
-  <div class="section" id="casual" data-aos="fade-up">
-    <h2 style="text-align:center;">Casual Elegance</h2>
-    <div class="grid">
-      <div class="card" data-aos="zoom-in"><div class="plus">+</div>Kurtis</div>
-      <div class="card" data-aos="zoom-in"><div class="plus">+</div>Indo-Western</div>
-    </div>
-  </div>
+  <div class="section" id="shop">
+    <h2 style="text-align:center; color:#eee;">Shop Now</h2>
+    <div class="grid">
+      <div class="card"><div class="plus">+</div>View All Products</div>
+    </div>
+  </div>
 
-  <!-- Shop Now Section -->
-  <div class="section" id="shop" data-aos="fade-up">
-    <h2 style="text-align:center;">Shop Now</h2>
-    <div class="grid">
-      <div class="card" data-aos="zoom-in">
-        <a href="/products.html">
-          <div class="plus">+</div>
-          View All Products
-        </a>
-      </div>
-    </div>
-  </div>
+  <div class="section" id="story">
+    <h2 style="text-align:center; color:#eee;">Our Story</h2>
+    <p style="max-width: 700px; margin: auto; color:#ccc; text-align:center;">
+      DIVYARA is not just fashion—it’s a movement celebrating tradition, beauty, and individuality through carefully crafted attire.
+    </p>
+  </div>
 
-  <!-- Our Story Section -->
-  <div class="section" id="story" data-aos="fade-up">
-    <h2 style="text-align:center;">Our Story</h2>
-    <p style="max-width: 700px; margin: auto; text-align:center;">
-      DIVYARA is not just fashion—it’s a movement celebrating tradition, beauty, and individuality through carefully crafted attire.
-    </p>
-  </div>
-
-  <!-- Contact Section -->
-  <div class="section" id="contact" data-aos="fade-up">
-    <h2 style="text-align:center;">Contact Us</h2>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="contact-info">
-      <div>&copy; 2025 DIVYARA</div>
-      <div>Instagram: <a href="https://instagram.com/_thedivyara" target="_blank">@_thedivyara</a></div>
-      <div>Phone: <a href="tel:9327045197">9327045197</a></div>
-      <div>Email: <a href="mailto:divyara.vastra@gmail.com">divyara.vastra@gmail.com</a></div>
-    </div>
-  </footer>
-
-  <!-- AOS Script -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
+  <!-- Contact Section -->
+  <div class="section" id="contact">
+    <h2 style="text-align:center; color:#eee;">Contact Us</h2>
+    <footer>
+      <div class="contact-info">
+        <span>&copy; 2025 DIVYARA</span>
+        <span>Instagram: <a href="https://instagram.com/_thedivyara" target="_blank">@_thedivyara</a></span>
+        <span>Phone: <a href="tel:9327045197">9327045197</a></span>
+        <span>Email: <a href="mailto:divyara.vastra@gmail.com">divyara.vastra@gmail.com</a></span>
+      </div>
+    </footer>
+  </div>
 
 </body>
 </html>
