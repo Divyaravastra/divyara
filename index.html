@@ -3,43 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <title>DIVYARA</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts: Sanskrit 2003 -->
   <link href="https://fonts.googleapis.com/css2?family=Sanskrit+2003&display=swap" rel="stylesheet" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffdf9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #2c2c2c;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      font-family: 'Sanskrit 2003', serif;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.2rem;
+    }
+
+    header p {
+      font-style: italic;
+      color: #e1c699;
+      font-size: 1.5rem;
+      margin-top: 0;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1602810318763-0492cbe22b4b?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      font-size: 2.3rem;
+      font-weight: bold;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    main p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    a.btn {
+      display: inline-block;
+      background-color: #c1121f;
+      color: white;
+      padding: 0.8rem 2.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    a.btn:hover {
+      background-color: #8a0e14;
+    }
+
+    #contact {
+      background-color: #fefefe;
+      padding: 3rem 1rem;
+      max-width: 600px;
+      margin: 3rem auto;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    #contact h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #2c2c2c;
+    }
+
+    #contact p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    #contact a {
+      color: #c1121f;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: #2c2c2c;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media(max-width: 600px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      .hero {
+        font-size: 1.6rem;
+        height: 50vh;
+      }
+
+      main p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>DIVYARA</h1>
-    <p class="slogan">Where DeVine meets their beauty</p>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Collection</a>
-      <a href="#">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <p>Where DeVine meets their beauty</p>
   </header>
 
   <section class="hero">
-    <h2>Tradition. Occasion. Casual. All in Style.</h2>
-    <p>Elevate your wardrobe with elegant, timeless, and comfortable fashion for every moment.</p>
-    <a class="btn" href="#contact">Connect with Us</a>
+    Tradition. Occasion. Casual. All in Style.
   </section>
 
-  <section class="about">
-    <h2>About DIVYARA</h2>
-    <p>We are a clothing brand that blends the richness of tradition with the elegance of modern design. From festive occasions to everyday wear, DIVYARA offers something unique for every woman.</p>
-  </section>
+  <main>
+    <p>DIVYARA is your go-to brand for elegant and timeless clothing that blends rich traditions with modern style. Our collection includes everything from festive wear to comfortable casuals crafted to celebrate you.</p>
+    <a href="#contact" class="btn">Connect with Us</a>
+  </main>
 
-  <section id="contact" class="contact">
+  <section id="contact">
     <h2>Contact Us</h2>
     <p><strong>Phone:</strong> <a href="tel:+919327045197">9327045197</a></p>
     <p><strong>Email:</strong> <a href="mailto:divyara.vastra@gmail.com">divyara.vastra@gmail.com</a></p>
-    <p><strong>Instagram:</strong> <a href="https://instagram.com/_thedivyara" target="_blank">@_thedivyara</a></p>
+    <p><strong>Instagram:</strong> <a href="https://instagram.com/_thedivyara" target="_blank" rel="noopener noreferrer">@_thedivyara</a></p>
   </section>
 
   <footer>
-    <p>© 2025 DIVYARA. All rights reserved.</p>
+    &copy; 2025 DIVYARA. All rights reserved.
   </footer>
 </body>
 </html>
