@@ -43,9 +43,43 @@
       height: 150px;
       display: flex;
       justify-content: space-around;
-      align-items: center;
+      align-items: flex-start;
       pointer-events: none;
       z-index: 0;
+      gap: 20px;
+    }
+
+    .cloth-wrapper {
+      animation: sway 5s ease-in-out infinite;
+      transform-origin: top center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Different delay for each cloth to sway differently */
+    .cloth-wrapper:nth-child(odd) {
+      animation-delay: 0s;
+    }
+    .cloth-wrapper:nth-child(even) {
+      animation-delay: 2.5s;
+    }
+
+    /* Adding slight vertical floating */
+    .cloth-wrapper {
+      animation-name: sway, floaty;
+      animation-duration: 5s, 7s;
+      animation-timing-function: ease-in-out, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+    }
+
+    @keyframes sway {
+      0%, 100% { transform: rotate(3deg); }
+      50% { transform: rotate(-3deg); }
+    }
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
     .cloth {
@@ -55,16 +89,6 @@
       border-radius: 10px 10px 5px 5px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       position: relative;
-      animation: sway 5s ease-in-out infinite;
-      transform-origin: top center;
-    }
-
-    /* Different delay for each cloth to sway differently */
-    .cloth:nth-child(odd) {
-      animation-delay: 0s;
-    }
-    .cloth:nth-child(even) {
-      animation-delay: 2.5s;
     }
 
     /* Hanger wire */
@@ -79,12 +103,6 @@
       border-radius: 20px 20px 0 0;
       background: #444;
       box-shadow: 0 2px 4px rgba(0,0,0,0.6);
-    }
-
-    /* Clothes hanging sway animation */
-    @keyframes sway {
-      0%, 100% { transform: rotate(3deg); }
-      50% { transform: rotate(-3deg); }
     }
 
     .hero h1 {
@@ -230,11 +248,11 @@
 
   <section class="hero">
     <div class="clothes-line">
-      <div class="cloth"></div>
-      <div class="cloth"></div>
-      <div class="cloth"></div>
-      <div class="cloth"></div>
-      <div class="cloth"></div>
+      <div class="cloth-wrapper"><div class="cloth"></div></div>
+      <div class="cloth-wrapper"><div class="cloth"></div></div>
+      <div class="cloth-wrapper"><div class="cloth"></div></div>
+      <div class="cloth-wrapper"><div class="cloth"></div></div>
+      <div class="cloth-wrapper"><div class="cloth"></div></div>
     </div>
     <h1>DIVYARA</h1>
     <p>Where DeVine meets their beauty</p>
