@@ -82,7 +82,7 @@
       background-color: transparent;
     }
 
-    /* Header with logo */
+    /* Header with brand name */
     .header {
       text-align: center;
       padding: 100px 20px 40px;
@@ -95,11 +95,12 @@
       gap: 15px;
     }
 
-    .header img.logo {
-      max-width: 220px;
-      width: 100%;
-      height: auto;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+    .header h1 {
+      font-size: 70px;
+      color: #b19cd9;
+      margin: 0;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .header p {
@@ -165,8 +166,8 @@
     }
 
     @media (max-width: 768px) {
-      .header img.logo {
-        max-width: 160px;
+      .header h1 {
+        font-size: 50px;
       }
 
       .header p {
@@ -196,7 +197,7 @@
   </nav>
 
   <div class="header" id="home" data-aos="fade-down">
-    <img src="/logo.png" alt="DIVYARA Logo" class="logo" />
+    <h1>DIVYARA</h1>
     <p>Where DeVine Meets Their Beauty</p>
   </div>
 
