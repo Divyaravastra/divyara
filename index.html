@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DIVYARA - Where DeVine Meets Their Beauty</title>
 
-  <!-- Fonts -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet" />
 
-  <!-- AOS Animation Library -->
+  <!-- AOS Animation CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
@@ -20,12 +20,13 @@
     body {
       margin: 0;
       font-family: 'Gloock', serif;
-      /* Gradient background: light purple to light yellow */
+      /* Background gradient from light purple to light yellow */
       background: linear-gradient(to bottom, #f3e5f5 0%, #fff9c4 100%);
       color: #4a2c2a;
       overflow-x: hidden;
     }
 
+    /* Flower sketches in corners */
     .flower-bg {
       position: fixed;
       width: 200px;
@@ -35,6 +36,7 @@
       background-repeat: no-repeat;
       opacity: 0.08;
       z-index: 0;
+      pointer-events: none;
     }
 
     .flower-top-left {
@@ -48,6 +50,7 @@
       transform: rotate(180deg);
     }
 
+    /* Navigation bar */
     nav {
       position: fixed;
       top: 0;
@@ -73,6 +76,7 @@
       color: #000;
     }
 
+    /* Section styling */
     .section {
       padding: 80px 20px;
       margin-top: 60px;
@@ -81,27 +85,35 @@
       background-color: #fff9c4; /* Light Yellow */
     }
 
+    /* Header with gradient from light grey to black */
     .header {
       text-align: center;
       padding: 100px 20px 40px;
-      background-color: #fff9c4; /* Light Yellow */
+      background: linear-gradient(to bottom, #d3d3d3 0%, #1a1a1a 100%);
       border-bottom: 1px solid #ccc;
       position: relative;
+      color: white;
+      -webkit-background-clip: padding-box;
+      -moz-background-clip: padding;
+      background-clip: padding-box;
     }
 
     .header h1 {
       font-size: 64px;
       margin: 0 0 15px;
-      color: #222;
       letter-spacing: 0.05em;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
     }
 
     .header p {
       font-size: 24px;
-      color: #4a2c2a;
       letter-spacing: 0.08em;
+      color: #ddd;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
     }
 
+    /* Grid styling */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -174,7 +186,7 @@
 </head>
 <body>
 
-  <!-- Flower Decorations -->
+  <!-- Flower sketches -->
   <div class="flower-bg flower-top-left"></div>
   <div class="flower-bg flower-bottom-right"></div>
 
@@ -241,7 +253,7 @@
     </footer>
   </div>
 
-  <!-- AOS Script -->
+  <!-- AOS Animation JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -249,5 +261,6 @@
       once: true
     });
   </script>
+
 </body>
 </html>
