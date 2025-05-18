@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DIVYARA - Where DeVine Meets Their Beauty</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <style>
     * {
       box-sizing: border-box;
@@ -23,7 +29,6 @@
       overflow-x: hidden;
     }
 
-    /* Navbar */
     nav {
       position: fixed;
       top: 0;
@@ -54,7 +59,6 @@
       margin-top: 60px;
     }
 
-    /* Flower background overlays */
     body::before,
     body::after {
       content: "";
@@ -181,36 +185,39 @@
   </nav>
 
   <!-- Header Section -->
-  <div class="header section" id="home">
+  <div class="header section" id="home" data-aos="fade-down">
     <h1>DIVYARA</h1>
     <p>Where DeVine Meets Their Beauty</p>
   </div>
 
-  <!-- Product Grid -->
-  <div class="section" id="festive">
+  <!-- Festive Wear Section -->
+  <div class="section" id="festive" data-aos="fade-up">
     <h2 style="text-align:center; color:#eee;">Festive Wear</h2>
     <div class="grid">
-      <div class="card"><div class="plus">+</div>Elegant Sarees</div>
-      <div class="card"><div class="plus">+</div>Lehengas</div>
+      <div class="card" data-aos="zoom-in"><div class="plus">+</div>Elegant Sarees</div>
+      <div class="card" data-aos="zoom-in"><div class="plus">+</div>Lehengas</div>
     </div>
   </div>
 
-  <div class="section" id="casual">
+  <!-- Casual Section -->
+  <div class="section" id="casual" data-aos="fade-up">
     <h2 style="text-align:center; color:#eee;">Casual Elegance</h2>
     <div class="grid">
-      <div class="card"><div class="plus">+</div>Kurtis</div>
-      <div class="card"><div class="plus">+</div>Indo-Western</div>
+      <div class="card" data-aos="zoom-in"><div class="plus">+</div>Kurtis</div>
+      <div class="card" data-aos="zoom-in"><div class="plus">+</div>Indo-Western</div>
     </div>
   </div>
 
-  <div class="section" id="shop">
+  <!-- Shop Section -->
+  <div class="section" id="shop" data-aos="fade-up">
     <h2 style="text-align:center; color:#eee;">Shop Now</h2>
     <div class="grid">
-      <div class="card"><div class="plus">+</div>View All Products</div>
+      <div class="card" data-aos="zoom-in"><div class="plus">+</div>View All Products</div>
     </div>
   </div>
 
-  <div class="section" id="story">
+  <!-- Our Story -->
+  <div class="section" id="story" data-aos="fade-up">
     <h2 style="text-align:center; color:#eee;">Our Story</h2>
     <p style="max-width: 700px; margin: auto; color:#ccc; text-align:center;">
       DIVYARA is not just fashion—it’s a movement celebrating tradition, beauty, and individuality through carefully crafted attire.
@@ -218,7 +225,7 @@
   </div>
 
   <!-- Contact Section -->
-  <div class="section" id="contact">
+  <div class="section" id="contact" data-aos="fade-up">
     <h2 style="text-align:center; color:#eee;">Contact Us</h2>
     <footer>
       <div class="contact-info">
@@ -230,5 +237,13 @@
     </footer>
   </div>
 
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true
+    });
+  </script>
 </body>
 </html>
