@@ -2,291 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DIVYARA - Where DeVine meets their beauty</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sanskrit+2003&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIVYARA - Where DeVine Meets Their Beauty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
   <style>
-    /* Reset */
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fffdf9;
-      color: #333;
-    }
-
-    /* Hero Section with animated clothes hanging background */
-    .hero {
-      height: 100vh;
-      background-color: #2c2c2c;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #f9f5f0;
-      text-align: center;
-      font-family: 'Sanskrit 2003', serif;
-      overflow: hidden;
-      padding: 0 1rem;
-    }
-
-    /* Clothes hanging animation container */
-    .clothes-line {
-      position: absolute;
-      top: 40%;
-      left: 0;
-      width: 100%;
-      height: 150px;
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      pointer-events: none;
-      z-index: 0;
-      gap: 20px;
-    }
-
-    .cloth-wrapper {
-      animation: sway 5s ease-in-out infinite;
-      transform-origin: top center;
+      font-family: 'Gloock', serif;
+      background-color: #fff8ec;
       display: flex;
       flex-direction: column;
       align-items: center;
+      color: #4a2c2a;
     }
 
-    /* Different delay for each cloth to sway differently */
-    .cloth-wrapper:nth-child(odd) {
-      animation-delay: 0s;
-    }
-    .cloth-wrapper:nth-child(even) {
-      animation-delay: 2.5s;
-    }
-
-    /* Adding slight vertical floating */
-    .cloth-wrapper {
-      animation-name: sway, floaty;
-      animation-duration: 5s, 7s;
-      animation-timing-function: ease-in-out, ease-in-out;
-      animation-iteration-count: infinite, infinite;
-    }
-
-    @keyframes sway {
-      0%, 100% { transform: rotate(3deg); }
-      50% { transform: rotate(-3deg); }
-    }
-    @keyframes floaty {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    .cloth {
-      width: 80px;
-      height: 120px;
-      background: linear-gradient(135deg, #c1121f 0%, #8a0e14 100%);
-      border-radius: 10px 10px 5px 5px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      position: relative;
-    }
-
-    /* Hanger wire */
-    .cloth::before {
-      content: '';
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 10px;
-      border-radius: 20px 20px 0 0;
-      background: #444;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.6);
-    }
-
-    .hero h1 {
-      font-size: 4rem;
-      margin-bottom: 0.2rem;
-      letter-spacing: 0.1em;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero p {
-      font-style: italic;
-      font-size: 1.7rem;
-      margin-bottom: 2rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero a.btn {
-      background-color: #c1121f;
-      color: white;
-      padding: 1rem 3rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.2rem;
-      transition: background-color 0.3s ease;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero a.btn:hover {
-      background-color: #8a0e14;
-    }
-
-    /* Collections Section */
-    #collections {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
+    .header {
       text-align: center;
+      margin: 40px 0 20px;
     }
 
-    #collections h2 {
-      font-family: 'Sanskrit 2003', serif;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #2c2c2c;
+    .header h1 {
+      font-size: 48px;
+      margin: 0;
+      font-family: 'Gloock', serif;
     }
 
-    .collection-grid {
+    .header p {
+      font-size: 20px;
+      margin: 10px 0 30px;
+    }
+
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.8rem;
-    }
-
-    .collection-item {
-      background: #fefefe;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .collection-item:hover {
-      transform: scale(1.05);
-    }
-
-    .collection-item img {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 0 30px;
       width: 100%;
-      height: 250px;
-      object-fit: cover;
+      max-width: 1200px;
     }
 
-    .collection-item h3 {
-      font-family: 'Sanskrit 2003', serif;
-      font-size: 1.4rem;
-      padding: 1rem;
-      color: #c1121f;
-    }
-
-    /* Contact Section */
-    #contact {
-      background-color: #fefefe;
-      padding: 3rem 1rem;
-      max-width: 600px;
-      margin: 3rem auto 5rem;
+    .card {
+      background-color: #f7e3c3;
+      border-radius: 20px;
+      padding: 30px 20px;
       text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      font-size: 18px;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
     }
 
-    #contact h2 {
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      color: #2c2c2c;
-      font-family: 'Sanskrit 2003', serif;
+    .card:hover {
+      transform: scale(1.03);
     }
 
-    #contact p {
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
+    .card:nth-child(odd) {
+      background-color: #ffe5b4;
     }
 
-    #contact a {
-      color: #c1121f;
+    .card:nth-child(even) {
+      background-color: #e4d5f5;
+    }
+
+    .plus {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
       font-weight: bold;
-      text-decoration: none;
     }
 
-    /* Footer */
     footer {
-      background-color: #2c2c2c;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    /* Responsive */
-    @media(max-width: 600px) {
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-
-      .hero p {
-        font-size: 1.2rem;
-      }
-
-      #collections h2 {
-        font-size: 2rem;
-      }
-
-      .collection-item img {
-        height: 180px;
-      }
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 <body>
-
-  <section class="hero">
-    <div class="clothes-line">
-      <div class="cloth-wrapper"><div class="cloth"></div></div>
-      <div class="cloth-wrapper"><div class="cloth"></div></div>
-      <div class="cloth-wrapper"><div class="cloth"></div></div>
-      <div class="cloth-wrapper"><div class="cloth"></div></div>
-      <div class="cloth-wrapper"><div class="cloth"></div></div>
-    </div>
+  <div class="header">
     <h1>DIVYARA</h1>
-    <p>Where DeVine meets their beauty</p>
-    <a href="#collections" class="btn">Explore Collections</a>
-  </section>
+    <p>Where DeVine Meets Their Beauty</p>
+  </div>
 
-  <section id="collections">
-    <h2>Our Collections</h2>
-    <div class="collection-grid">
-      <div class="collection-item">
-        <img src="https://images.unsplash.com/photo-1562157879-818bc0726a3f?auto=format&fit=crop&w=600&q=80" alt="Traditional Wear" />
-        <h3>Traditional Elegance</h3>
-      </div>
-      <div class="collection-item">
-        <img src="https://images.unsplash.com/photo-1613991201320-937e2b7e511f?auto=format&fit=crop&w=600&q=80" alt="Casual Wear" />
-        <h3>Casual Comfort</h3>
-      </div>
-      <div class="collection-item">
-        <img src="https://images.unsplash.com/photo-1602810318763-0492cbe22b4b?auto=format&fit=crop&w=600&q=80" alt="Occasional Wear" />
-        <h3>Occasional Glam</h3>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Phone:</strong> <a href="tel:+919327045197">9327045197</a></p>
-    <p><strong>Email:</strong> <a href="mailto:divyara.vastra@gmail.com">divyara.vastra@gmail.com</a></p>
-    <p><strong>Instagram:</strong> <a href="https://instagram.com/_thedivyara" target="_blank" rel="noopener noreferrer">@_thedivyara</a></p>
-  </section>
+  <div class="grid">
+    <div class="card"><div class="plus">+</div>Festive Wear</div>
+    <div class="card"><div class="plus">+</div>Casual Elegance</div>
+    <div class="card"><div class="plus">+</div>Shop Now</div>
+    <div class="card"><div class="plus">+</div>Our Story</div>
+    <div class="card"><div class="plus">+</div>Contact Us</div>
+    <div class="card"><div class="plus">+</div>Lookbook</div>
+    <div class="card"><div class="plus">+</div>Crafted Collections</div>
+  </div>
 
   <footer>
-    &copy; 2025 DIVYARA. All rights reserved.
+    &copy; 2025 DIVYARA | @_thedivyara | 9327045197 | divyara.vastra@gmail.com
   </footer>
-
 </body>
 </html>
