@@ -8,29 +8,36 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
+      padding: 40px 60px;
       font-family: 'Gloock', serif;
       background-color: #fff8ec;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      color: #4a2c2a;
+      align-items: flex-start;
+      color: #000; /* black text by default */
     }
 
     .header {
-      text-align: center;
-      margin: 40px 0 20px;
+      text-align: left;
+      margin-bottom: 40px;
+      max-width: 600px;
     }
 
     .header h1 {
-      font-size: 48px;
-      margin: 0;
+      font-size: 56px;
+      margin: 0 0 10px 0;
       font-family: 'Gloock', serif;
+      font-weight: 700;
+      border-left: 6px solid #4a2c2a; /* subtle accent line on left */
+      padding-left: 15px;
     }
 
     .header p {
-      font-size: 20px;
-      margin: 10px 0 30px;
+      font-size: 22px;
+      margin: 0;
+      font-style: italic;
+      letter-spacing: 0.05em;
+      color: #000;
     }
 
     .grid {
@@ -51,6 +58,7 @@
       position: relative;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.2s;
+      color: #4a2c2a;
     }
 
     .card:hover {
@@ -71,6 +79,7 @@
       right: 15px;
       font-size: 22px;
       font-weight: bold;
+      color: #4a2c2a;
     }
 
     footer {
@@ -80,11 +89,21 @@
       color: #666;
       text-align: center;
       line-height: 1.6;
+      width: 100%;
     }
 
     .contact-info span {
       display: block;
       margin: 4px 0;
+    }
+
+    .contact-info a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
